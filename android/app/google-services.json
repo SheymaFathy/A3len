@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "768690416058",
+    "project_id": "ealen-f71f9",
+    "storage_bucket": "ealen-f71f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768690416058:android:6f4efd4f9d7af463785583",
+        "android_client_info": {
+          "package_name": "com.example.ealen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "768690416058-bcf5o68tp53urgng85n4npscdgm59ntm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1yBa7xer6tFRcHjmcO5ijAPL6VKUE-T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "768690416058-bcf5o68tp53urgng85n4npscdgm59ntm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
