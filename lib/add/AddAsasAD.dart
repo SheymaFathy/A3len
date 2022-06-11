@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ealen/add/MyAd.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../home.dart';
@@ -12,6 +14,11 @@ class AddAsasAd extends StatefulWidget {
 }
 
 class _AddAsasAdState extends State<AddAsasAd> {
+  var x1 = new TextEditingController();
+  var x2 = new TextEditingController();
+  var x3 = new TextEditingController();
+  var x4 = new TextEditingController();
+  var x5 = new TextEditingController();
   Color mainColor = Color(0xff7f1019);
   Color textColor = Colors.black54;
   dynamic myData;
@@ -40,6 +47,7 @@ class _AddAsasAdState extends State<AddAsasAd> {
 
                 SizedBox(height: 20,),
                 TextField(
+                  controller: x1,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -58,6 +66,7 @@ class _AddAsasAdState extends State<AddAsasAd> {
                 ),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: x2,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -76,6 +85,7 @@ class _AddAsasAdState extends State<AddAsasAd> {
                 ),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: x3,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -94,6 +104,7 @@ class _AddAsasAdState extends State<AddAsasAd> {
                 ),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: x4,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -112,6 +123,7 @@ class _AddAsasAdState extends State<AddAsasAd> {
                 ),
                 SizedBox(height: 20,),
                 TextField(
+                  controller: x5,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -183,7 +195,19 @@ class _AddAsasAdState extends State<AddAsasAd> {
                           color: Colors.white,
                         ),
                       ),
-                      onPressed: (){}
+                      onPressed: (){
+                        String a= x1.text;
+                        String b= x2.text;
+                        String c= x3.text;
+                        String d= x4.text;
+                        String e= x5.text;
+                        String f =myData.toString();
+                        FirebaseFirestore.instance.collection("data").add
+                          (<String,dynamic>{'Image':f,'Asas Type':a, 'Asas States':c, 'color':d,'price':e});
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MyAsasAd(f,a,c,d,e)));
+
+
+                      }
                   ),
                 ),
 
